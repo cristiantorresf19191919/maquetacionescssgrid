@@ -1,0 +1,88 @@
+@font-face {
+    font-family: "louis"; // Louis-Bolditalic
+    src: url("../fonts/Louis-BoldItalic.woff") format('woff');
+}
+
+$font-primary: "louis";
+$font-secundary: Arial;
+$color-primary: #414042;
+$color-secundary: rgb(182,134,45);
+$color-placeholder: rgb(179,179,179);
+$bgcolor-placeholder: rgb(242,242,242);
+$color-button-text: #3f3e40;
+$color-footer-text: rgb(77,77,77);
+$color-header-title: #fff;
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing: inherit;
+}
+
+html{
+
+    box-sizing: border-box;
+    font-size: 62.5%; // 10px / 16px = 62.5% -> 1rem = 10px
+}
+body{
+    font-family: $font-primary; // louis
+    font-weight: 300;
+    line-height: 1.6;
+    padding: 7rem;
+    box-sizing: border-box;
+
+    
+}
+@media screen and (max-width:860px){
+    html{
+        font-size: 25.75%; //  4.12px
+    }
+    .containerOwn{
+        padding: 1rem !important;
+    }  
+    input{     
+        display: block;
+      
+    }
+}
+@media screen and (max-width:800px){
+    html{
+        font-size: 40.75%; //  4.12px
+    }
+    .containerOwn{
+        padding: 1rem !important;
+    }
+
+    h1{
+        font-size: 2rem;
+        
+    }
+}
+
+@media screen and (max-width:740px){
+    input, select {
+        width: 79% !important;
+       
+    }
+    input{
+        margin-left: 6rem;
+    }
+    label{
+        display: block !important;
+    }
+
+    select {
+        display: inline-block !important;
+
+    }
+}
+
+
+
+.containerOwn{
+    padding: 1rem 7rem;
+    text-align: center;
+}
+

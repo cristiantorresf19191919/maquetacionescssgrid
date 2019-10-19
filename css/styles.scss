@@ -1,0 +1,50 @@
+@import "sass/base";
+@import "sass/header";
+@import "sass/main";
+@import "sass/politica";
+@mixin default {
+    height: auto;
+    width: 100%;
+    background: rgba(245, 245, 245, 0.52);
+    border: 2px solid rgba(3, 99, 255, 0.068);
+    animation-name: shine;
+    animation-duration: 5s;
+}
+
+.form__grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    grid-gap: 1rem 7rem;
+    width: 80%;
+margin: 0 auto;
+}
+
+.parent-grid{
+    display: grid;
+    margin-top: 5rem;
+    grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    grid-gap: 1rem 7rem;
+    width: 100%;
+
+}
+
+.child{
+    padding: 2rem;
+}
+.formulario{
+  @include default;
+  display: grid;
+  justify-content: center;
+
+}
+.politica{
+ @include default;
+}
+.linea_amarilla{
+    border: 2px solid $color-secundary;
+    margin: 2rem 0;
+    
+}
+.footer{
+ @include default;
+}

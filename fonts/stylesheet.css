@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Louis';
+    src: url('Louis-BoldItalic.woff2') format('woff2'),
+        url('Louis-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+

@@ -1,0 +1,193 @@
+@mixin responsiveImg {
+	max-width: 100%;
+	height: auto;
+}
+
+@media screen and (max-width:800px){
+    .header__main{
+        
+            height: 35vh !important;
+            &__title-box h1 {
+                line-height: 10rem !important;
+            }       
+       
+    }
+}
+
+.header {
+
+	width: 100%;
+
+	&__logo-box{
+		display:flex;
+		justify-content: space-around;
+		font-family: $font-secundary;
+	}
+	&__logo {
+		@include responsiveImg;
+		width: 12rem;
+		
+	}
+	&__texto {
+		h2 span:nth-child(2){
+			
+			color: $color-secundary;
+		}
+	}
+	&__main {
+		background-image: url("../assets/headerpic.jpg");
+		height: 105vh;
+		background-size: cover;
+        background-position: top;
+        animation: moveBackground;
+		animation-duration: 3s;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		clip-path: polygon(0px 0px, 100% 0px, 99.62% 100.46%, 49.47% 97.23%, 0px 100%);
+
+		&__cta{
+			margin-bottom: 4rem;
+			text-transform: uppercase;
+			text-decoration: none;
+			text-align: center;			
+			font-size: 1.8rem;
+			font-weight: 00;
+			margin-top: 6%;
+			display: inline-block;
+			padding: 0 2.1rem;
+			border-radius: 2.5rem;
+			position: relative;
+			width: 22rem;
+			color: $color-secundary;
+			background: linear-gradient(
+				to bottom,
+				rgb(53, 33, 3) 0%,
+				rgb(27, 28, 29) 40%,
+				rgb(0, 0, 0) 70%,
+				rgb(20, 20, 20) 100%
+			  );  
+			  animation: botonAnimacion 0.5s ease-in-out 0.75s;
+			  animation-fill-mode: backwards;
+			  &::after{
+				content: "Reserva Ahora";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				border-radius: 2.5rem;
+				z-index: -1;
+				transition: all .3s ease-in-out;
+				background: linear-gradient(
+				to bottom,
+				rgb(53, 33, 3) 0%,
+				rgb(27, 28, 29) 40%,
+				rgb(0, 0, 0) 70%,
+				rgb(20, 20, 20) 100%
+			  );  
+			} 
+			&:hover {
+				&::after {
+					z-index: 1;
+					transform: scaleX(1.5) scaleY(2.2);
+					opacity: 0;
+				}
+			  }
+			
+			  &:active{
+				  &::after{
+					z-index: 1;
+					transform: scaleX(1.5) scaleY(2.2);
+					opacity: 0; 
+				  }
+			  }
+
+
+
+
+
+
+
+
+		}
+
+		&__title-box {
+			height: calc(100% / 3);
+			// border: 2px solid rgba(255, 68, 0, 0.274);
+			h1 {
+				color:  rgba(255, 255, 255, 0.055);
+				font-weight: bold;
+				font-style: italic;
+				font-size: 5rem;
+				text-transform: uppercase;
+				line-height: 26rem;
+				margin-left: 21px;
+				display: inline-block;
+                position: relative;
+                overflow: hidden;                
+                // border: 2px solid white;
+                padding: 2rem;
+                background: #fff -webkit-gradient(linear, left top, right top, from(#fff), to(#fff), color-stop(0.5, rgba(93, 0, 0, 0.822))) 0 0 no-repeat;
+				background-size: 150px; 
+				-webkit-background-clip: text; /*compatibilidad para chrome */     
+                background-clip: text;
+                animation-name: shine;
+                animation-duration: 4s;
+                animation-iteration-count: infinite;
+                text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
+				&::after {
+					content: "";
+					position: absolute;
+					left: -100%;
+					top: 0;
+					width: 100%;
+					height: 100%;
+                    transform: skew(-20deg);                  
+					background-image: linear-gradient(to right, transparent, rgba(207, 16, 16, 0.493), transparent);
+				}
+			}
+        }
+    }    
+	
+}
+
+@keyframes shine {
+	0%, 10% {
+		background-position: -1000px;
+	}
+	20% {
+		background-position: top left;
+	}
+	90% {
+		background-position: top right;
+	}
+	100% {
+		background-position: 1000px;
+	}
+}
+
+@keyframes moveBackground {
+    0% {
+		background-position: -20rem;
+    }
+    100%{
+		background-position: top;
+
+    }
+}
+
+@keyframes botonAnimacion {
+    0% {
+        opacity: 0;
+        transform: translateY(8rem);
+    }
+    75% {
+        transform: translateY(-2rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

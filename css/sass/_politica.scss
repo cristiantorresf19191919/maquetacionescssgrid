@@ -1,0 +1,18 @@
+.politica{
+    text-align: start;
+
+    .parrafo{
+        margin-top: 4rem;
+        text-align: justify;
+        p{
+        display: inline;
+
+        }
+
+    }
+    &__link{
+        color: $color-secundary;
+        display: inline;
+        font-weight: 700;
+    }
+}
